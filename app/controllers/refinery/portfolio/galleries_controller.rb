@@ -5,14 +5,14 @@ module Refinery
       before_filter :find_page
 
       def index
-        @galleries = Gallery.roots
+        @galleries = Gallery.roots.live
         @items = Item.root_items
         present(@page)
       end
 
       def show
         @gallery = Gallery.find(params[:id])
-        @galleries = @gallery.children
+        @galleries = @gallery.children.live
         @items = @gallery.items
         present(@page)
 

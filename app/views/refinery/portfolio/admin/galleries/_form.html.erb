@@ -39,6 +39,11 @@
       <%= refinery_help_tag t('.parent_gallery_help') -%>
     </span>
     <%= f.select :parent_id, nested_set_options(::Refinery::Portfolio::Gallery, @gallery) {|i| "#{'-' * i.level} #{i.title}" }, :include_blank => true %>
+     <span id='draft_field'>
+      <%= f.check_box :draft %>
+      <%= f.label :draft, t('.save_as_draft'),
+                  :class => "stripped" %>
+    </span>
   </div>
 
   <%= render :partial => "/refinery/admin/form_actions",

@@ -42,11 +42,13 @@ en:
               other: '%{count} images'
             new_child: Add a new child gallery
             view_live_html: View this gallery live <br/><em>(opens in a new window)</em>
+            draft: ' - draft'
           form:
             parent_gallery: Parent Gallery
             parent_gallery_help: You can nest a gallery inside another gallery, creating a multiple-level portfolio. Choose a gallery to make this gallery the child of the one you select, or leave it blank to keep it as a top-level gallery.
             cover_image: Cover Image
             cover_image_help: The image that is used as the cover of this gallery.
+            save_as_draft: Save as draft
       galleries:
         show:
           other: Other Galleries
