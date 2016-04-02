@@ -18,9 +18,6 @@
             <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/portfolio/gallery", :default => part.to_s.titleize), "##{part}" %>
           </li>
         <% end %>
-        <li class='ui-state-default'>
-          <%= link_to t('.images'), "#images" %>
-        </li>
       </ul>
       <div id='page_part_editors'>
         <% [:body].each do |part| %>
@@ -28,9 +25,6 @@
             <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
           </div>
         <% end %>
-        <div class='page_part' id='images'>
-          <%= render :partial => 'image_fields', :locals => {:f => f} %>
-        </div>
       </div>
     </div>
   </div>
@@ -41,6 +35,11 @@
       <%= refinery_help_tag t('.parent_gallery_help') -%>
     </span>
     <%= f.select :parent_id, nested_set_options(::Refinery::Portfolio::Gallery, @gallery) {|i| "#{'-' * i.level} #{i.title}" }, :include_blank => true, :selected => @gallery.parent_id || params[:parent_id] %>
+     <span id='draft_field'>
+      <%= f.check_box :draft %>
+      <%= f.label :draft, t('.save_as_draft'),
+                  :class => "stripped" %>
+    </span>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,

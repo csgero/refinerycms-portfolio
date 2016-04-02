@@ -1,7 +1,7 @@
 en:
   refinery:
     plugins:
-      refinerycms_portfolio:
+      portfolio:
         title: Portfolio
     portfolio:
       admin:
@@ -17,7 +17,7 @@ en:
             create_new: Add new Image
             reorder: Reorder Images
             reorder_done: Done Reordering Images
-          index:
+          records:
             no_items_yet: There are no images here.
             sorry_no_results: Sorry! There are no results found.
             title: Images
@@ -48,6 +48,7 @@ en:
             parent_gallery_help: You can nest a gallery inside another gallery, creating a multiple-level portfolio. Choose a gallery to make this gallery the child of the one you select, or leave it blank to keep it as a top-level gallery.
             cover_image: Cover Image
             cover_image_help: The image that is used as the cover of this gallery.
+            save_as_draft: Save as draft
             images: Images
           image_fields:
             add_new_image: Add an image
@@ -59,3 +60,8 @@ en:
       'refinery/portfolio/gallery':
         title: Title
         body: Body
+        parent_id: Parent
+        lft: Lft
+        rgt: Rgt
+        depth: Depth
+        type: Type

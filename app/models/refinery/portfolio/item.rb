@@ -1,6 +1,6 @@
 module Refinery
   module Portfolio
-    class Item < Refinery::Core::BaseModel
+    class Item < ActiveRecord::Base
 
       translates :title, :caption
 

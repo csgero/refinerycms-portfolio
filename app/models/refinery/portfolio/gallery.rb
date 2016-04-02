@@ -27,8 +27,18 @@ module Refinery
         title
       end
 
+      class << self
+        def live
+          where(:draft => false)
+        end
+      end
+
       def cover_image
         items.sort_by(&:position).first if items.present?
+      end
+
+      def live?
+        not draft?
       end
 
       # We reject any empty ones because we have a template sitting around

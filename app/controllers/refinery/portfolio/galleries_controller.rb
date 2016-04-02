@@ -5,24 +5,24 @@ module Refinery
       before_filter :find_page
 
       def index
-        @galleries = Gallery.roots
+        @galleries = Gallery.roots.live
         @items = Item.root_items
         present(@page)
       end
 
       def show
         @gallery = Gallery.friendly.find(params[:id])
-        @galleries = @gallery.children
+        @galleries = @gallery.children.live
         @items = @gallery.items
         present(@page)
 
         render :action => "index"
       end
 
-      protected
+    protected
 
       def find_page
-        @page = ::Refinery::Page.find_by(:link_url => Refinery::Portfolio.page_url)
+        @page = ::Refinery::Page.where(:link_url => "/galleries").first
       end
 
     end
